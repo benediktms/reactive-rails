@@ -1,0 +1,7 @@
+<h1>Todos Index</h1>
+
+<% @todos.each do |todo| %>
+  <p><%= todo.name %></p>
+  <p><%= check_box_tag nil, nil, todo.completed_at?, data: { reflex:  'click->ExampleReflex#toggle', id: todo.id } %></p>
+  <p><%= todo.completed_at %></p>
+<% end %>

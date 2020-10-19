@@ -22,4 +22,8 @@ class ExampleReflex < ApplicationReflex
   #
   # Learn more at: https://docs.stimulusreflex.com
 
+  def toggle
+    todo = Todo.find(element.dataset[:id])
+    todo.update(completed_at: (todo.completed_at ? nil : Time.current))
+  end
 end
